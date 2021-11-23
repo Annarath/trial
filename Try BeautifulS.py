@@ -32,3 +32,6 @@ from bs4 import BeautifulSoup
 import requests #it requests library request info from specific website
 html_text = requests.get('https://www.glassdoor.com/Explore/top-data-science-companies-london_IO.4,16_IL.27,33_IC2671300.htm').text
 print(html_text)
+soup = BeautifulSoup(html_text, 'lxml')
+jobs = soup.find('span', class_ = 'common__commonStyles__greenText common__commonStyles__strong pr-xsm')
+print(jobs)
